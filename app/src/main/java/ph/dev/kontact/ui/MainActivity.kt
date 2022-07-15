@@ -7,5 +7,5 @@ import ph.dev.kontact.common.BaseViewModel
 
 class MainActivity : BaseActivity(R.layout.activity_main) {
 
-    override val viewModel: BaseViewModel by viewModels()
+    override val viewModel by viewModels<BaseViewModel>()
 }

@@ -1,9 +1,6 @@
 package ph.dev.kontact.common
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -28,6 +25,14 @@ open class BaseViewModel(
                     errorHandler.handleError(e, _errorLiveData)
                 }
             }
+        }
+    }
+
+    fun <T> safeApiCallLiveData(action: suspend () -> T) = liveData {
+        try {
+            emit(action())
+        } catch (e: Exception) {
+            errorHandler.handleError(e, _errorLiveData)
         }
     }
 }
