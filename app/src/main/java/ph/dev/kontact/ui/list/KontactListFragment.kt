@@ -2,8 +2,9 @@ package ph.dev.kontact.ui.list
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
+import androidx.navigation.fragment.findNavController
 import ph.dev.kontact.R
 import ph.dev.kontact.common.BaseFragment
 import ph.dev.kontact.common.viewBinding
@@ -30,8 +31,16 @@ class KontactListFragment : BaseFragment(R.layout.fragment_kontact_list) {
             adapter.submitList(it)
         }
 
-        if (viewLifecycleOwner.lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {
-            getKontactList()
+        binding.addContactButton.setOnClickListener {
+            findNavController().navigate(R.id.to_add_kontact)
+        }
+
+        getKontactList()
+
+        setFragmentResultListener("add_contact") { _, bundle ->
+            val detail = bundle.getParcelable<KontactDetail>("detail")
+
+            if (detail != null) viewModel.addKontact(detail)
         }
     }
 

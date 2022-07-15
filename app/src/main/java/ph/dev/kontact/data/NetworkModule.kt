@@ -8,7 +8,6 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import ph.dev.kontact.BuildConfig
-import ph.dev.kontact.data.remote.KatApi
 import ph.dev.kontact.data.remote.KontactApi
 import retrofit2.Retrofit
 import retrofit2.create
@@ -18,16 +17,14 @@ object NetworkModule {
 
     private val json = Json { ignoreUnknownKeys = true }
 
-    fun kontactApi() = retrofit(BuildConfig.API_BASE_URL).create<KontactApi>()
-
-    fun katApi() = retrofit(BuildConfig.KAT_API_BASE_URL).create<KatApi>()
+    fun kontactApi() = retrofit().create<KontactApi>()
 
     @OptIn(ExperimentalSerializationApi::class)
-    private fun retrofit(baseUrl: String): Retrofit {
+    private fun retrofit(): Retrofit {
         val contentType = "application/json".toMediaType()
 
         return Retrofit.Builder()
-            .baseUrl(baseUrl)
+            .baseUrl(BuildConfig.API_BASE_URL)
             .addConverterFactory(json.asConverterFactory(contentType))
             .client(okHttpClient())
             .build()

@@ -1,28 +1,32 @@
 package ph.dev.kontact.data.repository
 
 import ph.dev.kontact.data.NetworkModule
+import ph.dev.kontact.data.dto.AddKontactRequest
+import ph.dev.kontact.data.dto.KontactInfo
 import ph.dev.kontact.data.model.KontactDetail
 
 object KontactRepository {
 
     private val kontactApi = NetworkModule.kontactApi()
-    private val katApi = NetworkModule.katApi()
 
     suspend fun getKontacts(): List<KontactDetail> {
         val list = kontactApi.getKontactList()
 
-        val images = katApi.getRandomCats(list.size.toString())
+        return list.map { it.toKontactDetail() }
+    }
 
-        return list.mapIndexed { index, kontactInfo ->
-            KontactDetail(
-                id = kontactInfo.id.toString(),
-                name = kontactInfo.name,
-                companyName = kontactInfo.companyName,
-                contactNumber = kontactInfo.phoneNumber,
-                emailAddress = kontactInfo.emailAddress,
-                dateAdded = kontactInfo.dateAdded,
-                profileImage = images[index].url
-            )
-        }
+    suspend fun addKontact(request: AddKontactRequest): KontactDetail {
+        return kontactApi.addNewKontact(request).toKontactDetail()
+    }
+
+    private fun KontactInfo.toKontactDetail(): KontactDetail {
+        return KontactDetail(
+            id = id.toString(),
+            name = name,
+            companyName = companyName,
+            contactNumber = phoneNumber,
+            emailAddress = emailAddress,
+            profileImage = profileImage
+        )
     }
 }

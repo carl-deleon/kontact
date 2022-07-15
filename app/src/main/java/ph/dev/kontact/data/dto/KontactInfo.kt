@@ -10,6 +10,5 @@ data class KontactInfo(
     @SerialName("email_address") val emailAddress: String,
     @SerialName("phone_number") val phoneNumber: String,
     @SerialName("company_name") val companyName: String,
-    @SerialName("date_added") val dateAdded: String,
     @SerialName("profile_image") val profileImage: String
 )

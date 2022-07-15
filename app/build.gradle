@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlinx-serialization'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -17,8 +18,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "API_BASE_URL", '"https://kontact.free.beeceptor.com/"')
-        buildConfigField("String", "KAT_API_BASE_URL", '"https://api.thecatapi.com/v1/"')
+        // buildConfigField("String", "API_BASE_URL", '"https://kontact.free.beeceptor.com/"')
+        buildConfigField("String", "API_BASE_URL", '"http://10.0.2.2:3000/"')
     }
     buildFeatures {
         viewBinding true

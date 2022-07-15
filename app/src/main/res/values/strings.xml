@@ -3,4 +3,10 @@
 
     <string name="title_error">Error</string>
     <string name="dialog_default_positive_button_text">Close</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_email_address">Email Address</string>
+    <string name="hint_mobile_number">Mobile Number</string>
+    <string name="hint_company_name">Company Name</string>
+    <string name="send">Send</string>
+    <string name="submit_button">Submit</string>
 </resources>
