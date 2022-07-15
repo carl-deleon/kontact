@@ -1,7 +1,11 @@
 package ph.dev.kontact.common
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.coroutines.CoroutineContext
@@ -28,11 +32,8 @@ open class BaseViewModel(
         }
     }
 
-    fun <T> safeApiCallLiveData(action: suspend () -> T) = liveData {
-        try {
-            emit(action())
-        } catch (e: Exception) {
-            errorHandler.handleError(e, _errorLiveData)
-        }
+    override fun onCleared() {
+        viewModelScope.cancel()
+        super.onCleared()
     }
 }
