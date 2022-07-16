@@ -13,10 +13,29 @@
         <action
             android:id="@+id/to_add_kontact"
             app:destination="@id/fragment_add_kontact" />
+
+        <action
+            android:id="@+id/to_kontact_detail"
+            app:destination="@id/fragment_kontact_detail">
+
+            <argument
+                android:name="kontactDetail"
+                app:argType="ph.dev.kontact.data.model.KontactDetail" />
+        </action>
     </fragment>
 
     <fragment
         android:id="@+id/fragment_add_kontact"
         android:name="ph.dev.kontact.ui.add.AddKontactFragment"
         tools:layout="@layout/fragment_add_kontact" />
+
+    <dialog
+        android:id="@+id/fragment_kontact_detail"
+        android:name="ph.dev.kontact.ui.detail.KontactDetailFragment"
+        tools:layout="@layout/fragment_kontact_detail">
+
+        <argument
+            android:name="kontactDetail"
+            app:argType="ph.dev.kontact.data.model.KontactDetail" />
+    </dialog>
 </navigation>

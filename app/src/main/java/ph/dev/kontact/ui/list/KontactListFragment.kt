@@ -39,7 +39,6 @@ class KontactListFragment : BaseFragment(R.layout.fragment_kontact_list) {
 
         setFragmentResultListener("add_contact") { _, bundle ->
             val detail = bundle.getParcelable<KontactDetail>("detail")
-
             if (detail != null) viewModel.addKontact(detail)
         }
     }
@@ -49,6 +48,7 @@ class KontactListFragment : BaseFragment(R.layout.fragment_kontact_list) {
     }
 
     private fun itemClickListener(): (KontactDetail) -> Unit = {
-        // TODO Navigate to Detail Screen
+        val direction = KontactListFragmentDirections.toKontactDetail(it)
+        findNavController().navigate(direction)
     }
 }
