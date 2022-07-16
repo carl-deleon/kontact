@@ -10,9 +10,6 @@ interface KontactApi {
     @GET("contacts")
     suspend fun getKontactList(): List<KontactInfo>
 
-    @GET("contacts/{id}")
-    suspend fun getKontact(@Path("id") id: String): KontactInfo
-
     @POST("contacts")
     suspend fun addNewKontact(@Body request: AddKontactRequest): KontactInfo
 

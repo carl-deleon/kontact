@@ -1,0 +1,146 @@
+{
+  "uuid": "a5a2af20-0166-4729-b9e7-eca1d4b98c4b",
+  "lastMigration": 20,
+  "name": "Demo API",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "ecea55d9-5693-4c9f-bbef-d9b877494f90",
+      "documentation": "Generate random body (JSON, text, CSV, etc) with templating",
+      "method": "get",
+      "endpoint": "contacts",
+      "responses": [
+        {
+          "uuid": "56e5ffd8-5a0e-4cbe-88f7-9582f5147df8",
+          "body": "[\r\n  {\r\n    \"id\": 1,\r\n    \"name\": \"Zerk Assad\",\r\n    \"email_address\": \"zassad0@4shared.com\",\r\n    \"phone_number\": \"+63 995 373 0425\",\r\n    \"company_name\": \"Jabbercube\",\r\n    \"date_added\": \"2021-09-14T17:44:59Z\",\r\n    \"profile_image\": \"http://dummyimage.com/100x100.png/5fa2dd/ffffff\"\r\n  },\r\n  {\r\n    \"id\": 2,\r\n    \"name\": \"Ursa Chipping\",\r\n    \"email_address\": \"uchipping1@printfriendly.com\",\r\n    \"phone_number\": \"+63 995 376 8496\",\r\n    \"company_name\": \"Fivechat\",\r\n    \"date_added\": \"2022-02-14T12:35:13Z\",\r\n    \"profile_image\": \"http://dummyimage.com/100x100.png/5fa2dd/ffffff\"\r\n  },\r\n  {\r\n    \"id\": 3,\r\n    \"name\": \"Symon Bamb\",\r\n    \"email_address\": \"sbamb2@uiuc.edu\",\r\n    \"phone_number\": \"+63 995 496 4144\",\r\n    \"company_name\": \"Rooxo\",\r\n    \"date_added\": \"2021-11-13T02:43:00Z\",\r\n    \"profile_image\": \"http://dummyimage.com/100x100.png/dddddd/000000\"\r\n  },\r\n  {\r\n    \"id\": 4,\r\n    \"name\": \"Ardenia Andrzejak\",\r\n    \"email_address\": \"aandrzejak3@dmoz.org\",\r\n    \"phone_number\": \"+63 919 500 7643\",\r\n    \"company_name\": \"Thoughtblab\",\r\n    \"date_added\": \"2021-12-10T09:28:37Z\",\r\n    \"profile_image\": \"http://dummyimage.com/100x100.png/5fa2dd/ffffff\"\r\n  },\r\n  {\r\n    \"id\": 5,\r\n    \"name\": \"Augustina Fitchett\",\r\n    \"email_address\": \"afitchett4@globo.com\",\r\n    \"phone_number\": \"+63 927 597 7688\",\r\n    \"company_name\": \"Aivee\",\r\n    \"date_added\": \"2022-03-06T12:06:28Z\",\r\n    \"profile_image\": \"http://dummyimage.com/100x100.png/cc0000/ffffff\"\r\n  },\r\n  {\r\n    \"id\": 6,\r\n    \"name\": \"Glyn O'Hagan\",\r\n    \"email_address\": \"gohagan5@reuters.com\",\r\n    \"phone_number\": \"+63 917 222 9414\",\r\n    \"company_name\": \"Realbuzz\",\r\n    \"date_added\": \"2021-08-01T20:29:42Z\",\r\n    \"profile_image\": \"http://dummyimage.com/100x100.png/5fa2dd/ffffff\"\r\n  },\r\n  {\r\n    \"id\": 7,\r\n    \"name\": \"Timmie Wickwar\",\r\n    \"email_address\": \"twickwar6@domainmarket.com\",\r\n    \"phone_number\": \"+63 999 583 2970\",\r\n    \"company_name\": \"Feedspan\",\r\n    \"date_added\": \"2021-12-05T02:45:15Z\",\r\n    \"profile_image\": \"http://dummyimage.com/100x100.png/dddddd/000000\"\r\n  },\r\n  {\r\n    \"id\": 8,\r\n    \"name\": \"Dewie Arzu\",\r\n    \"email_address\": \"darzu7@sun.com\",\r\n    \"phone_number\": \"+63 928 653 9214\",\r\n    \"company_name\": \"Jazzy\",\r\n    \"date_added\": \"2021-09-23T05:05:12Z\",\r\n    \"profile_image\": \"http://dummyimage.com/100x100.png/cc0000/ffffff\"\r\n  },\r\n  {\r\n    \"id\": 9,\r\n    \"name\": \"Pollyanna Dunnet\",\r\n    \"email_address\": \"pdunnet8@rambler.ru\",\r\n    \"phone_number\": \"+63 917 781 1668\",\r\n    \"company_name\": \"Skippad\",\r\n    \"date_added\": \"2021-07-11T07:31:12Z\",\r\n    \"profile_image\": \"http://dummyimage.com/100x100.png/cc0000/ffffff\"\r\n  },\r\n  {\r\n    \"id\": 10,\r\n    \"name\": \"Peggi Mackley\",\r\n    \"email_address\": \"pmackley9@wikia.com\",\r\n    \"phone_number\": \"+63 915 421 0911\",\r\n    \"company_name\": \"Twitternation\",\r\n    \"date_added\": \"2021-07-15T22:29:44Z\",\r\n    \"profile_image\": \"http://dummyimage.com/100x100.png/cc0000/ffffff\"\r\n  }\r\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Creates 10 random users, or the amount specified in the 'total' query param",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "78e61e0a-8258-4567-a940-baf062cba3e3",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "contacts",
+      "responses": [
+        {
+          "uuid": "b0408e30-c7f8-4ab0-ae8e-6a719edd1174",
+          "body": "{\r\n    \"id\": 10,\r\n    \"name\": \"Carl Justine De leon\",\r\n    \"email_address\": \"cjhdeleon@gmail.com\",\r\n    \"phone_number\": \"+63 919 002 5414\",\r\n    \"company_name\": \"Twitternation\",\r\n    \"date_added\": \"2021-07-15T22:29:44Z\",\r\n    \"profile_image\": \"https://cdn2.thecatapi.com/images/cdd.jpg\"\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "35f7b7bb-1427-4488-a7e1-94da55b4af62",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "contacts/:id",
+      "responses": [
+        {
+          "uuid": "f97cc254-9f14-4ed9-96c5-2a5fc3b7af1f",
+          "body": "{\r\n  \"message\": \"Successfully Deleted\"\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "0466d51b-8981-4b3a-b9c7-34800d2e1fe7",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "contacts/:id",
+      "responses": [
+        {
+          "uuid": "d5d84866-b2d8-47b0-b6b3-b2c2bb98837e",
+          "body": "{\r\n    \"id\": 10,\r\n    \"name\": \"Carl Justine De leon\",\r\n    \"email_address\": \"cjhdeleon@gmail.com\",\r\n    \"phone_number\": \"+63 919 002 5414\",\r\n    \"company_name\": \"Twitternation\",\r\n    \"date_added\": \"2021-07-15T22:29:44Z\",\r\n    \"profile_image\": \"https://cdn2.thecatapi.com/images/cdd.jpg\"\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}
