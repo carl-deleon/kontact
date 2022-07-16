@@ -19,5 +19,5 @@ interface KontactApi {
     suspend fun updateKontact(@Path("id") id: String, info: KontactInfo)
 
     @DELETE("contacts/{id}")
-    suspend fun deleteKontact(@Path("id") id: String, info: KontactInfo)
+    suspend fun deleteKontact(@Path("id") id: String)
 }

@@ -41,6 +41,11 @@ class KontactListFragment : BaseFragment(R.layout.fragment_kontact_list) {
             val detail = bundle.getParcelable<KontactDetail>("detail")
             if (detail != null) viewModel.addKontact(detail)
         }
+
+        setFragmentResultListener("delete") { _, bundle ->
+            val id = bundle.getString("id")
+            if (id != null) viewModel.deleteKontact(id)
+        }
     }
 
     private fun getKontactList() {

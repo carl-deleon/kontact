@@ -19,6 +19,10 @@ object KontactRepository {
         return kontactApi.addNewKontact(request).toKontactDetail()
     }
 
+    suspend fun deleteKontact(id: String) {
+        return kontactApi.deleteKontact(id)
+    }
+
     private fun KontactInfo.toKontactDetail(): KontactDetail {
         return KontactDetail(
             id = id.toString(),

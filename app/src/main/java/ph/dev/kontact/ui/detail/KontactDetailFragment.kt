@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import coil.load
 import coil.transform.CircleCropTransformation
@@ -18,6 +21,8 @@ class KontactDetailFragment : BottomSheetDialogFragment() {
 
     private val navArgs: KontactDetailFragmentArgs by navArgs()
     private val kontactDetail by lazy { navArgs.kontactDetail }
+
+    private val viewModel by viewModels<KontactDetailViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +50,13 @@ class KontactDetailFragment : BottomSheetDialogFragment() {
             binding.companyNameTextView.text = companyName
         }
 
-        binding.deleteButton.setOnClickListener { }
+        binding.deleteButton.setOnClickListener {
+            viewModel.delete()
+        }
+
+        viewModel.deleteSuccessEvent.observe(viewLifecycleOwner) {
+            setFragmentResult("delete", bundleOf("id" to kontactDetail.id))
+            dismiss()
+        }
     }
 }

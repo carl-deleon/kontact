@@ -27,4 +27,12 @@ class KontactListViewModel : BaseViewModel() {
 
         _kontacts.value = copyList
     }
+
+    fun deleteKontact(id: String) {
+        // Soft delete only, deleted data will return after pulling new data from API.
+        val copyList = kontacts.value?.toMutableList()
+        copyList?.removeIf { it.id == id }
+
+        _kontacts.value = copyList
+    }
 }
