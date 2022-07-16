@@ -29,6 +29,16 @@
         android:name="ph.dev.kontact.ui.add.AddKontactFragment"
         tools:layout="@layout/fragment_add_kontact" />
 
+    <fragment
+        android:id="@+id/fragment_edit_kontact"
+        android:name="ph.dev.kontact.ui.edit.EditKontactFragment"
+        tools:layout="@layout/fragment_add_kontact">
+
+        <argument
+            android:name="kontactDetail"
+            app:argType="ph.dev.kontact.data.model.KontactDetail" />
+    </fragment>
+
     <dialog
         android:id="@+id/fragment_kontact_detail"
         android:name="ph.dev.kontact.ui.detail.KontactDetailFragment"
@@ -37,5 +47,14 @@
         <argument
             android:name="kontactDetail"
             app:argType="ph.dev.kontact.data.model.KontactDetail" />
+
+        <action
+            android:id="@+id/to_edit_kontact"
+            app:destination="@id/fragment_edit_kontact">
+
+            <argument
+                android:name="kontactDetail"
+                app:argType="ph.dev.kontact.data.model.KontactDetail" />
+        </action>
     </dialog>
 </navigation>

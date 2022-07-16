@@ -18,7 +18,9 @@ class KontactListViewModel : BaseViewModel() {
 
         updatedList.plusAssign(result)
 
-        _kontacts.value = updatedList.distinct().sortedBy { it.name }
+        _kontacts.value = updatedList
+            .distinctBy { it.id }
+            .sortedBy { it.name }
     }
 
     fun addKontact(kontactDetail: KontactDetail) {
@@ -32,6 +34,16 @@ class KontactListViewModel : BaseViewModel() {
         // Soft delete only, deleted data will return after pulling new data from API.
         val copyList = kontacts.value?.toMutableList()
         copyList?.removeIf { it.id == id }
+
+        _kontacts.value = copyList
+    }
+
+    fun updateKontact(kontactDetail: KontactDetail) {
+        val copyList = kontacts.value?.toMutableList()
+
+        copyList
+            ?.indexOfFirst { it.id == kontactDetail.id }
+            ?.let { copyList.set(it, kontactDetail) }
 
         _kontacts.value = copyList
     }

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
 import coil.transform.CircleCropTransformation
@@ -52,6 +53,12 @@ class KontactDetailFragment : BottomSheetDialogFragment() {
 
         binding.deleteButton.setOnClickListener {
             viewModel.delete()
+        }
+
+        binding.editButton.setOnClickListener {
+            val direction = KontactDetailFragmentDirections.toEditKontact(kontactDetail)
+            findNavController().navigate(direction)
+            dismiss()
         }
 
         viewModel.deleteSuccessEvent.observe(viewLifecycleOwner) {

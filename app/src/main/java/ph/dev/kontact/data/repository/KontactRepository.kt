@@ -2,6 +2,7 @@ package ph.dev.kontact.data.repository
 
 import ph.dev.kontact.data.NetworkModule
 import ph.dev.kontact.data.dto.AddKontactRequest
+import ph.dev.kontact.data.dto.EditKontactRequest
 import ph.dev.kontact.data.dto.KontactInfo
 import ph.dev.kontact.data.model.KontactDetail
 
@@ -21,6 +22,10 @@ object KontactRepository {
 
     suspend fun deleteKontact(id: String) {
         return kontactApi.deleteKontact(id)
+    }
+
+    suspend fun editKontact(id: String, request: EditKontactRequest): KontactDetail {
+        return kontactApi.updateKontact(id, request).toKontactDetail()
     }
 
     private fun KontactInfo.toKontactDetail(): KontactDetail {

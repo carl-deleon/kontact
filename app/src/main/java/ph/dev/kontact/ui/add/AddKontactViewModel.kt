@@ -11,7 +11,7 @@ import ph.dev.kontact.data.repository.KontactRepository
 
 class AddKontactViewModel : BaseViewModel() {
 
-    private val _uiState = MutableLiveData(AddKontactState(null))
+    private val _uiState = MutableLiveData(AddKontactState())
     val uiState: LiveData<AddKontactState> get() = _uiState
 
     val successEvent = MutableLiveData<KontactDetail>()
