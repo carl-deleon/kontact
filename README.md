@@ -8,5 +8,7 @@ Unfortunately there's a rating limit when using Beeceptor. You can use [Mockoon]
 
 [How to share Mockoon API files](https://mockoon.com/docs/latest/mockoon-data-files/sharing-mock-api-files/)
 
+Inorder to use Mockoon API locally, you must run the application on an Android Emulator and uncomment [this line in build.gradle](https://github.com/carl-deleon/kontact/blob/master/app/build.gradle#L23)
+
 # Architecture
 ![Architecture](./images/app.png)

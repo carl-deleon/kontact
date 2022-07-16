@@ -19,7 +19,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "API_BASE_URL", '"https://kontact.free.beeceptor.com/"')
-//        buildConfigField("String", "API_BASE_URL", '"http://10.0.2.2:3000/"')
+        // Uncomment this line when using Mockoon API. This only works with the Android Emulator.
+        // buildConfigField("String", "API_BASE_URL", '"http://10.0.2.2:3000/"')
     }
     buildFeatures {
         viewBinding true
